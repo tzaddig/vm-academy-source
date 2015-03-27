@@ -1,0 +1,48 @@
+/* use some variables from _variables.scss*/
+body{
+	background: $bg-color $bg-image;
+	background-size:contain;
+	font-family: $body-font;
+}
+h1,h2,h3,h4,h5,h6{font-family: $heading-font;}
+#masthead, #content{max-width: $page-width;margin:0 auto;}
+
+/*nested sass*/
+#content {
+	border:1px solid blue;
+	article {
+  
+  	h1 {
+			font-family:cursive;
+ 		}
+ 		.entry-footer{background: $bg-color;}
+	}
+	.div-2 {
+
+	}
+}
+
+/*nest, using an ampersand to inherit from parent.*/
+a{
+	color:purple;
+	&:hover{
+		color:pink;
+	}
+}
+
+/*use extensions and inheritence*/
+.button {
+	border:1px solid #000;
+	padding:1em;
+	color:#666;
+}
+.welcome {
+	@extend .button;
+	color:#ccc;
+}
+
+//Mixins!
+
+body{
+	@include font-size(24px);
+}

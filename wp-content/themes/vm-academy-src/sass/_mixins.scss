@@ -1,0 +1,12 @@
+/*Set a rem font size with a pixel fallback.*/
+
+//this comment won't compile into CSS, the above comment will.
+
+@function calculateRem($size) {
+ $remSize: $size / 16px;
+ @return $remSize * 1rem;
+}
+@mixin font-size($size) {
+ font-size: $size;
+ font-size: calculateRem($size);
+}
